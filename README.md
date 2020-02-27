@@ -1,11 +1,11 @@
-# Welcome to Easy Store!
+# Welcome to Stock Hub!
 
-Hey there! I am Storebot. I will assist you in ordering the products.
+Hey there! I am Store Bot. I will assist you in ordering the products.
 But first, I need to understand your language. Please follow the following steps:
 
 #### Deploying Dialogflow Agent:
 
-1. Locate the **Easy_Store** zip file in code repository.
+1. Locate the **Stock_Hub** zip file in code repository.
 2. Once you have a zip, head to **Actions on Google** and create a new project by entering a name and country for the project.
 3. Once the project is created, you will be on the **Onboarding** screen. Select **Conversational** on this screen.
 4. Fill in the basic details about your action such as invocation phrase, voice, etc in the **'Quick Setup'** section.
@@ -23,21 +23,15 @@ We will use **Firebase CLI** to deploy our cloud function. Make sure you have **
 
 For this you will need a node.js installation and npm.
 
-```bash
-npm install -g firebase-tools
-```
+> npm install -g firebase-tools
 
 Next, we will need to initialize firebase cloud functions library.If you haven't used firebase-tools on your computer, you'll need to login.
 
-```bash
-firebase login
-```
+> firebase login
 
 Once you're logged in to firebase, run the next command.
 
-```bash
-firebase init functions
-```
+> firebase init functions
 
 This command is a command-line wizard which will guide you through a process which will associate your firebase function with your Google Cloud project that gets created when you created 'Actions on Google' project in Part 1 of the deployment.
 
@@ -60,11 +54,9 @@ It will then ask:
 > Do you want to install dependencies with npm now?
 > Select **Yes** and wait for the wizard to finish.
 
-Once the association is done, next deploy the cloud function. Execute the following command by going to the root directory.
+Once the association is done, next deploy the cloud function. Execute the following command by going to the functions directory.
 
-```
-cd functions && firebase deploy
-```
+> cd functions firebase deploy
 
 Once deployed you will get a URL, this is your **webhook endpoint** that Dialogflow will use to make requests to. Paste the URL in the **Fullfillment** section of your Dialogflow agent. Now go ahead in **actions console** and **_test_** your application.
 

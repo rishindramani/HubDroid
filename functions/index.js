@@ -155,7 +155,7 @@ app.intent('List - OPTION - yes', (conv, params, option) => {
 });
 
 app.intent('Checkout', conv => {
-    conv.ask('Thanks so much for shopping with us. We will ship the products soon to your address. Your total is $' + price);
+    conv.ask('Thank you for shopping with us. We will ship the products asap to your address. Your total is $' + price);
     if (conv.surface.capabilities.has("actions.capability.SCREEN_OUTPUT")) {
         conv.ask(new Suggestions(['Exit', 'Phones', 'Tablets', 'Laptops']));
     }
@@ -164,15 +164,14 @@ app.intent('Checkout', conv => {
 });
 
 app.intent('Exit', conv => {
-    conv.ask(`Thank you for stopping by! See you next time.`);
+    conv.ask(`Thank you for stopping by. See you next time. Have a great day!`);
 
     // conv.close();
 
-    // ----EXPERIMENTAL----
     sleep(1000).then(() => {
         conv.close();
     });
-    // --------------------
+    
 });
 
 exports.dialogflowFirebaseFulfillment = functions.https.onRequest(app);
