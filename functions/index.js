@@ -123,8 +123,8 @@ app.intent('Laptops', conv => {
 app.intent('List - OPTION', (conv, params, option) => {
     const SELECTED_ITEM_RESPONSES = {
         'SELECTION_KEY_P1': phones[0],
-        'SELECTION_KEY_P2': phones[5],
-        'SELECTION_KEY_P3': phones[7],
+        'SELECTION_KEY_P2': phones[7],
+        'SELECTION_KEY_P3': phones[5],
         'SELECTION_KEY_L1': laptops[0],
         'SELECTION_KEY_L2': laptops[1],
         'SELECTION_KEY_L3': laptops[2],
