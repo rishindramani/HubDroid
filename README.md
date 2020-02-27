@@ -23,15 +23,21 @@ We will use **Firebase CLI** to deploy our cloud function. Make sure you have **
 
 For this you will need a node.js installation and npm.
 
-> npm install -g firebase-tools
+```bash
+npm install -g firebase-tools
+```
 
 Next, we will need to initialize firebase cloud functions library.If you haven't used firebase-tools on your computer, you'll need to login.
 
-> firebase login
+```bash
+firebase login
+```
 
 Once you're logged in to firebase, run the next command.
 
-> firebase init functions
+```bash
+firebase init functions
+```
 
 This command is a command-line wizard which will guide you through a process which will associate your firebase function with your Google Cloud project that gets created when you created 'Actions on Google' project in Part 1 of the deployment.
 
@@ -54,9 +60,11 @@ It will then ask:
 > Do you want to install dependencies with npm now?
 > Select **Yes** and wait for the wizard to finish.
 
-Once the association is done, next deploy the cloud function. Execute the following command by going to the functions directory.
+Once the association is done, next deploy the cloud function. Execute the following command by going to the root directory.
 
-> cd functions firebase deploy
+```
+cd functions && firebase deploy
+```
 
 Once deployed you will get a URL, this is your **webhook endpoint** that Dialogflow will use to make requests to. Paste the URL in the **Fullfillment** section of your Dialogflow agent. Now go ahead in **actions console** and **_test_** your application.
 
