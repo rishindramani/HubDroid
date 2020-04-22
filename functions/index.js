@@ -16,7 +16,7 @@ let allCartItems = [];
 
 const welcome = (conv) => {
   conv.ask(
-    `<speak>Hey there! Looking for new Phones, Tablets or Laptops? Well, you have come to the right place!</speak>`
+    `<speak>Hey there! Greetings from Stock Hub! This is BB8.  \nLooking for new Phones, Tablets or Laptops? Well, I am here to assist you!</speak>`
   );
   if (conv.surface.capabilities.has("actions.capability.SCREEN_OUTPUT")) {
     const chips = ["Phones", "Laptops", "Tablets"];
@@ -28,7 +28,7 @@ const welcome = (conv) => {
 app.intent("Default Welcome Intent", (conv) => welcome(conv));
 
 app.intent("Phones", (conv) => {
-  conv.ask(`<speak> Here are the best selling smartphones. </speak>`);
+  conv.ask(`<speak> Okay! Let me make things easier for you! Here are some of the best selling smartphones. Select any one for further details. </speak>`);
 
   conv.ask(
     new List({
@@ -61,7 +61,7 @@ app.intent("Phones", (conv) => {
 });
 
 app.intent("Tablets", (conv) => {
-  conv.ask(`<speak> Here are the best selling tablets. </speak>`);
+  conv.ask(`<speak> Here are the best selling tablets. I am sure one of these will match your choice. Select the desired one.</speak>`);
 
   conv.ask(
     new List({
@@ -94,7 +94,7 @@ app.intent("Tablets", (conv) => {
 });
 
 app.intent("Laptops", (conv) => {
-  conv.ask(`<speak> Here are the best selling laptops. </speak>`);
+  conv.ask(`<speak> Cool! Here's the list of best selling laptops. Select your preferred choice. </speak>`);
 
   conv.ask(
     new List({
@@ -152,7 +152,7 @@ app.intent("List - OPTION - no", (conv, params, option) => {
 });
 
 app.intent("List - OPTION - yes", (conv, params, option) => {
-  conv.ask("Product added to the cart!");
+  conv.ask("Great choice!!The Product has been added to the cart!  \nHow can i assist you more?");
   price += lastSelected.price;
   allCartItems.push(lastSelected);
   cartItems = true;
@@ -164,7 +164,7 @@ app.intent("List - OPTION - yes", (conv, params, option) => {
 });
 
 app.intent("Cart", (conv) => {
-  conv.ask('Here is your new cart details');
+  conv.ask('Here is your updated cart details');
   let cartText = "";
   allCartItems.forEach(cartItem => {
     cartText += `# ${cartItem.name} $${cartItem.price}\n`;
@@ -177,7 +177,7 @@ app.intent("Cart", (conv) => {
       }
     ))
   }
-  conv.ask('Proceed to checkout?');
+  conv.ask('Do you wish to Proceed to checkout?');
   conv.ask(
     new Suggestions(["Checkout", "Add Phones", "Add Tablets", "Add Laptops"])
   );
@@ -185,8 +185,8 @@ app.intent("Cart", (conv) => {
 
 app.intent("Checkout", (conv) => {
   conv.ask(
-    "Thank you for shopping with us. We will ship the products ASAP to your address. Your total is $" +
-    price + ". Order details and tracking ID has been sent to your email."
+    "Thanks Andrew for shopping with us. We will ship the products ASAP to your address. Your total is $" +
+    price + ". Order details and tracking ID has been sent to your mobile."
   );
   if (conv.surface.capabilities.has("actions.capability.SCREEN_OUTPUT")) {
     conv.ask(new Suggestions(["Exit", "Phones", "Tablets", "Laptops"]));
