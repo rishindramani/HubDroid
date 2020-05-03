@@ -1,18 +1,18 @@
-# Welcome to Stock Hub!
+# Welcome to Hub droid!
 
 Hey there! I am Store Bot. I will assist you in ordering the products.
 But first, I need to understand your language. Please follow the following steps:
 
 #### Deploying Dialogflow Agent:
 
-1. Locate the **Stock_Hub** zip file in code repository.
-2. Once you have a zip, head to **Actions on Google** and create a new project by entering a name and country for the project.
+1. Locate the **Hub_Droid.zip** file in code repository.
+2. Once you have a zip, head to **[Actions on Google](https://console.actions.google.com/)** and create a new project by entering a name and country for the project.
 3. Once the project is created, you will be on the **Onboarding** screen. Select **Conversational** on this screen.
 4. Fill in the basic details about your action such as invocation phrase, voice, etc in the **'Quick Setup'** section.
 5. In **'Action'** section, select **Build your action** and select **'Custom Intent'** in the consecutive dialog box and click **'Build'**.
 6. You will be redirected to DialogFlow's project page. On this screen: **select your timezone - don't change the language.**. Then select **Create** and wait for the process to complete.
 7. Once done, select the **Settings** gear icon at the top left and then go to **Export and Import tab**.
-8. On this screen, select **Restore from Zip** and restore the zip you created!
+8. On this screen, select **Restore from Zip** and browse `Hub_Droid.zip` and click Restore!
 9. Go to the **Fulfillment** tab and you will see a field **Webhook**. You have to enter your **own https endpoint**. You can create your webhook by following [Deployment guide of the Firebase Cloud Function](#Deploying-Cloud-Functions-to-Firebase).
 
 10. That's it, you are almost there! Next select the **Integrations** tab and then under Google Assistant section click on **Integration Settings** and click on **_Test!_** You are done! Now, the Google assistant action has been deployed only for your Gmail account. You can fire up your Google Assistant app using the Invocation phrase you defined earlier and test it! **Voila!** Let's start now.
