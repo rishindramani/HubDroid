@@ -1,5 +1,7 @@
 # Welcome to Hub droid!
 
+<p align=center><img src="https://github.com/Team-Code-Paradox/StockHub/blob/master/Assets/preview.gif" alt="Preview" /></p>
+
 Hey there! I am Store Bot. I will assist you in ordering the products.
 But first, I need to understand your language. Please follow the following steps:
 
