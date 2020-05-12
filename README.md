@@ -2,8 +2,10 @@
 
 <p align=center><img src="https://github.com/Team-Code-Paradox/StockHub/blob/master/Assets/preview.gif" alt="Preview" /></p>
 
-<p align=center>Watch our product in action in <img src="http://icons.iconarchive.com/icons/papirus-team/papirus-apps/256/youtube-icon.png" height="20" width="20" alt="Youtube" /> <a href="https://youtu.be/6TZG1LsH-EA">here</a> </p>
-
+#### <p align=center><b>Watch our product in action in </b><img src="http://icons.iconarchive.com/icons/papirus-team/papirus-apps/256/youtube-icon.png" height="20" width="20" alt="Youtube" /> <a href="https://youtu.be/6TZG1LsH-EA">here</a> </p>
+####
+A typical **website integration** has been presented [here](https://storage.googleapis.com/webdroid/Hub%20Droid-Web-master/index.html). A full scale featured product is showcased in the video link [above.](https://youtu.be/6TZG1LsH-EA)
+####
 Hey there! I am Store Bot. I will assist you in ordering the products.
 But first, I need to understand your language. Please follow the following steps:
 
