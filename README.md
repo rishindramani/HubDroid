@@ -4,7 +4,10 @@
 
 #### <p align=center><b>Watch our product in action in </b><img src="http://icons.iconarchive.com/icons/papirus-team/papirus-apps/256/youtube-icon.png" height="20" width="20" alt="Youtube" /> <a href="https://youtu.be/6TZG1LsH-EA">here</a> </p>
 ####
-A typical **website integration** has been presented [here](https://storage.googleapis.com/webdroid/Hub%20Droid-Web-master/index.html). A full scale featured product is showcased in the video link [above.](https://youtu.be/6TZG1LsH-EA)
+Added customer support integration to track and respond to customer requests and direct them to human agent on customer's demand. Just say **talk to human** or **transfer to agent** and a customer support agent will be assigned in realtime to resolve customer queries.
+A typical **website integration** has been presented [here](https://storage.googleapis.com/webdroid/Hub%20Droid-Web-master/index.html).
+  
+A full scale featured product is showcased in the video link as stated [above.](https://youtu.be/6TZG1LsH-EA)
 ####
 Hey there! I am Store Bot. I will assist you in ordering the products.
 But first, I need to understand your language. Please follow the following steps:
