@@ -155,55 +155,6 @@ app.intent('Lights', (conv) => {
   }));
 });
 
-// Browse Carousel
-app.intent('browse carousel', (conv) => {
-  // Browse Carousel requires browser access
-  if (!conv.hasWebBrowser) {
-    conv.ask(`I'm sorry, browse carousel isn't currently supported on smart display`);
-    const filterChips = intentSuggestions.filter(chip => chip !="Browse Carousel");
-    conv.ask(new Suggestions(filterChips));
-    return;
-  }
-  conv.ask('This is an example of a "Browse Carousel"');
-  conv.ask(new BrowseCarousel({
-    items: [
-      new BrowseCarouselItem({
-        title: 'Item #1',
-        url: 'https://assistant.google.com/',
-        description: 'Description of Item #1',
-        image: new Image({
-          url: 'https://www.gstatic.com/images/branding/product/2x/assistant_64dp.png',
-          alt: 'Google Assistant logo',
-        }),
-        footer: 'Item 1 footer',
-      }),
-      new BrowseCarouselItem({
-        title: 'Item #2',
-        url: 'https://developers.google.com/actions/transactions/physical/dev-guide-physical-gpay',
-        description: 'Description of Item #2',
-        image: new Image({
-          url: 'https://www.gstatic.com/images/branding/product/2x/pay_64dp.png',
-          alt: 'Google Pay logo',
-        }),
-        footer: 'Item 2 footer',
-      }),
-    ],
-  }));
-  conv.ask(new Suggestions(intentSuggestions));
-});
-
-// Handle list or carousel selection
-app.intent('item selected', (conv, params, option) => {
-  let response = 'You did not select any item from the list or carousel';
-  if (option && SELECTED_ITEM_RESPONSES.hasOwnProperty(option)) {
-    response = SELECTED_ITEM_RESPONSES[option];
-  } else {
-    response = 'You selected an unknown item from the list or carousel';
-  }
-  conv.ask(response);
-  conv.ask(new Suggestions(intentSuggestions));
-});
-
 app.intent("Chairs", (conv) => {
   conv.ask(`<speak> We understand how important comfort is with beautiful build quality. Have a look at our best selling stylish Chairs.</speak>`);
 
