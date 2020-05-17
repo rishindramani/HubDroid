@@ -94,10 +94,31 @@ app.intent("Default Welcome Intent", (conv) => welcome(conv));
 //   // }
 // });
 
+
+
+// Constants for list and carousel selection
+const SELECTION_KEY_GOOGLE_ASSISTANT = 'googleAssistant';
+const SELECTION_KEY_GOOGLE_PAY = 'googlePay';
+const SELECTION_KEY_GOOGLE_PIXEL = 'googlePixel';
+const SELECTION_KEY_GOOGLE_HOME = 'googleHome';
+
+// Constant for image URLs
+const IMG_URL_AOG = 'https://storage.googleapis.com/actionsresources/logo_assistant_2x_64dp.png';
+const IMG_URL_GOOGLE_PAY = 'https://storage.googleapis.com/actionsresources/logo_pay_64dp.png';
+const IMG_URL_GOOGLE_PIXEL = "https://storage.googleapis.com/madebygoog/v1/Pixel/Pixel_ColorPicker/Pixel_Device_Angled_Black-720w.png";
+const IMG_URL_GOOGLE_HOME = "https://lh3.googleusercontent.com/Nu3a6F80WfixUqf_ec_vgXy_c0-0r4VLJRXjVFF_X_CIilEu8B9fT35qyTEj_PEsKw";
+
+// Constants for selected item responses
+const SELECTED_ITEM_RESPONSES = {
+  [SELECTION_KEY_GOOGLE_ASSISTANT]: 'You selected Google Assistant!',
+  [SELECTION_KEY_GOOGLE_PAY]: 'You selected Google Pay!',
+  [SELECTION_KEY_GOOGLE_PIXEL]: 'You selected Google Pixel!',
+  [SELECTION_KEY_GOOGLE_HOME]: 'You selected Google Home!',
+};
 // Carousel
 app.intent('Lights', (conv) => {
   conv.ask('This is an example of a carousel.');
-  conv.ask(new Suggestions(intentSuggestions));
+  // conv.ask(new Suggestions(intentSuggestions));
   conv.ask(new Carousel({
     items: {
       // Add the first item to the carousel
