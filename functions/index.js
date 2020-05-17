@@ -7,6 +7,7 @@ const {
   BasicCard,
   Image,
   Carousel,
+  BrowseCarousel,
 } = require("actions-on-google");
 
 // Import modules for sending emails.
@@ -54,7 +55,7 @@ app.intent("Lights", (conv) => {
 
   // Display a horizontal slider.
   conv.ask(
-    new Carousel({
+    new BrowseCarousel({
       title: "Best Selling Lights",
       items: {
         // Add the first item to the list
@@ -88,9 +89,9 @@ app.intent("Lights", (conv) => {
     })
   );
 
-  if (conv.surface.capabilities.has("actions.capability.SCREEN_OUTPUT")) {
+  // if (conv.surface.capabilities.has("actions.capability.SCREEN_OUTPUT")) {
     conv.ask(new Suggestions(["Fans", "Chairs"]));
-  }
+  // }
 });
 
 app.intent("Chairs", (conv) => {
