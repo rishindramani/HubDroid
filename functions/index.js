@@ -49,49 +49,159 @@ const welcome = (conv) => {
 app.intent("Default Welcome Intent", (conv) => welcome(conv));
 
 // To show different types of lights.
-app.intent("Lights", (conv) => {
+// app.intent("Lights", (conv) => {
 
-  conv.ask(`<speak>Awesome! We have an antique collection of lights which are well suited for every house. Here's the list of our best selling lights. They are just waiting to be placed in your house.</speak>`);
+//   conv.ask(`<speak>Awesome! We have an antique collection of lights which are well suited for every house. Here's the list of our best selling lights. They are just waiting to be placed in your house.</speak>`);
 
-  // Display a horizontal slider.
-  conv.ask(
-    new Carousel({
-      title: "Best Selling Lights",
-      items: {
-        // Add the first item to the list
-        SELECTION_KEY_L1: {
-          synonyms: [lights[0].name],
-          title: `${lights[0].name} \n $${lights[0].price}`,
-          image: new Image({
-            url: lights[0].img1,
-            alt: lights[0].name,
-          }),
-        },
-        // Add the second item to the list
-        SELECTION_KEY_L2: {
-          synonyms: [lights[1].name],
-          title: `${lights[1].name} \n $${lights[1].price}`,
-          image: new Image({
-            url: lights[1].img1,
-            alt: lights[1].name,
-          }),
-        },
-        // Add the third item to the list
-        SELECTION_KEY_L3: {
-          synonyms: [lights[2].name],
-          title: `${lights[2].name} \n $${lights[2].price}`,
-          image: new Image({
-            url: lights[2].img1,
-            alt: lights[2].name,
-          }),
-        },
+//   // Display a horizontal slider.
+//   conv.ask(
+//     new Carousel({
+//       title: "Best Selling Lights",
+//       items: {
+//         // Add the first item to the list
+//         SELECTION_KEY_L1: {
+//           synonyms: [lights[0].name],
+//           title: `${lights[0].name} \n $${lights[0].price}`,
+//           image: new Image({
+//             url: lights[0].img1,
+//             alt: lights[0].name,
+//           }),
+//         },
+//         // Add the second item to the list
+//         SELECTION_KEY_L2: {
+//           synonyms: [lights[1].name],
+//           title: `${lights[1].name} \n $${lights[1].price}`,
+//           image: new Image({
+//             url: lights[1].img1,
+//             alt: lights[1].name,
+//           }),
+//         },
+//         // Add the third item to the list
+//         SELECTION_KEY_L3: {
+//           synonyms: [lights[2].name],
+//           title: `${lights[2].name} \n $${lights[2].price}`,
+//           image: new Image({
+//             url: lights[2].img1,
+//             alt: lights[2].name,
+//           }),
+//         },
+//       },
+//     })
+//   );
+
+//   // if (conv.surface.capabilities.has("actions.capability.SCREEN_OUTPUT")) {
+//     conv.ask(new Suggestions(["Fans", "Chairs"]));
+//   // }
+// });
+
+// Carousel
+app.intent('Lights', (conv) => {
+  conv.ask('This is an example of a carousel.');
+  conv.ask(new Suggestions(intentSuggestions));
+  conv.ask(new Carousel({
+    items: {
+      // Add the first item to the carousel
+      [SELECTION_KEY_GOOGLE_ASSISTANT]: {
+        synonyms: [
+          'Assistant',
+          'Google Assistant',
+        ],
+        title: 'Item #1',
+        description: 'Description of Item #1',
+        image: new Image({
+          url: IMG_URL_AOG,
+          alt: 'Google Assistant logo',
+        }),
       },
-    })
-  );
+      // Add the second item to the carousel
+      [SELECTION_KEY_GOOGLE_PAY]: {
+        synonyms: [
+          'Transactions',
+          'Google Payments',
+      ],
+        title: 'Item #2',
+        description: 'Description of Item #2',
+        image: new Image({
+          url: IMG_URL_GOOGLE_PAY,
+          alt: 'Google Pay logo',
+        }),
+      },
+      // Add third item to the carousel
+      [SELECTION_KEY_GOOGLE_PIXEL]: {
+        synonyms: [
+          'Pixel',
+          'Google Pixel phone',
+        ],
+        title: 'Item #3',
+        description: 'Description of Item #3',
+        image: new Image({
+          url: IMG_URL_GOOGLE_PIXEL,
+          alt: 'Google Pixel phone',
+        }),
+      },
+      // Add last item of the carousel
+      [SELECTION_KEY_GOOGLE_HOME]: {
+        title: 'Item #4',
+        synonyms: [
+          'Google Home',
+        ],
+        description: 'Description of Item #4',
+        image: new Image({
+          url: IMG_URL_GOOGLE_HOME,
+          alt: 'Google Home',
+        }),
+      },
+    },
+  }));
+});
 
-  // if (conv.surface.capabilities.has("actions.capability.SCREEN_OUTPUT")) {
-    conv.ask(new Suggestions(["Fans", "Chairs"]));
-  // }
+// Browse Carousel
+app.intent('browse carousel', (conv) => {
+  // Browse Carousel requires browser access
+  if (!conv.hasWebBrowser) {
+    conv.ask(`I'm sorry, browse carousel isn't currently supported on smart display`);
+    const filterChips = intentSuggestions.filter(chip => chip !="Browse Carousel");
+    conv.ask(new Suggestions(filterChips));
+    return;
+  }
+  conv.ask('This is an example of a "Browse Carousel"');
+  conv.ask(new BrowseCarousel({
+    items: [
+      new BrowseCarouselItem({
+        title: 'Item #1',
+        url: 'https://assistant.google.com/',
+        description: 'Description of Item #1',
+        image: new Image({
+          url: 'https://www.gstatic.com/images/branding/product/2x/assistant_64dp.png',
+          alt: 'Google Assistant logo',
+        }),
+        footer: 'Item 1 footer',
+      }),
+      new BrowseCarouselItem({
+        title: 'Item #2',
+        url: 'https://developers.google.com/actions/transactions/physical/dev-guide-physical-gpay',
+        description: 'Description of Item #2',
+        image: new Image({
+          url: 'https://www.gstatic.com/images/branding/product/2x/pay_64dp.png',
+          alt: 'Google Pay logo',
+        }),
+        footer: 'Item 2 footer',
+      }),
+    ],
+  }));
+  conv.ask(new Suggestions(intentSuggestions));
+});
+
+// Handle list or carousel selection
+app.intent('item selected', (conv, params, option) => {
+  let response = 'You did not select any item from the list or carousel';
+  if (option && SELECTED_ITEM_RESPONSES.hasOwnProperty(option)) {
+    response = SELECTED_ITEM_RESPONSES[option];
+  } else {
+    response = 'You selected an unknown item from the list or carousel';
+  }
+  conv.ask(response);
+  conv.ask(new Suggestions(intentSuggestions));
 });
 
 app.intent("Chairs", (conv) => {
