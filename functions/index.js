@@ -176,6 +176,21 @@ app.intent('Lights', (conv) => {
   }));
 });
 
+// Handle list or carousel selection
+app.intent('item selected', (conv, params, option) => {
+  let response = 'You did not select any item from the list or carousel';
+  if (option && SELECTED_ITEM_RESPONSES.hasOwnProperty(option)) {
+    response = SELECTED_ITEM_RESPONSES[option];
+  } else {
+    response = 'You selected an unknown item from the list or carousel';
+  }
+  conv.ask(response);
+  conv.ask(new Suggestions(intentSuggestions));
+});
+
+
+
+
 app.intent("Chairs", (conv) => {
   conv.ask(`<speak> We understand how important comfort is with beautiful build quality. Have a look at our best selling stylish Chairs.</speak>`);
 
