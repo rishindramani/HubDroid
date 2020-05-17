@@ -55,7 +55,7 @@ app.intent("Lights", (conv) => {
 
   // Display a horizontal slider.
   conv.ask(
-    new BrowseCarousel({
+    new Carousel({
       title: "Best Selling Lights",
       items: {
         // Add the first item to the list
