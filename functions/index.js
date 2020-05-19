@@ -9,7 +9,7 @@ const {
   Carousel,
 } = require("actions-on-google");
 
-Razorpay = require("razorpay");
+const Razorpay = require("razorpay");
 
 var instance = new Razorpay({
   key_id: 'rzp_test_nntqJyaRnUQOqk',
