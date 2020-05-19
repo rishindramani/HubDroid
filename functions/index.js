@@ -9,6 +9,11 @@ const {
   Carousel,
 } = require("actions-on-google");
 
+var instance = new Razorpay({
+  key_id: 'rzp_test_nntqJyaRnUQOqk',
+  key_secret: '2AQwGxFlCW54CfRq99nSiMOR'
+})
+
 // Import modules for sending emails.
 const nodemailer = require("nodemailer");
 const sendgridTransport = require("nodemailer-sendgrid-transport");
@@ -275,6 +280,26 @@ app.intent("Checkout", (conv) => {
 app.intent("Get checkout details", async (conv, params, signin) => {
   if (signin.status === "OK") {
     try {
+      // Generate Payment Link
+      var payment_link = "";
+      var params = {
+        "customer_id": "cust_EEvTyqFpRwtBed",
+        "type": "link",
+        "view_less": 1,
+        "amount": 1000,
+        "currency": "INR",
+        "description": "Payment Link for this purpose - cvb.",
+        "receipt": "TS91",
+        "reminder_enable": true,
+        "sms_notify": 1,
+        "email_notify": 1,
+        "expire_by": 1793630556,
+        "callback_url": "https://rishindramani.github.io/hubdroid",
+        "callback_method": "get"
+      };
+      response = instance.invoices.create(params);
+      console.log(response);
+      //
       const userProfile = conv.user.profile.payload;
       conv.ask(
         "Thank you for shopping with us. We will ship the products ASAP to your address. Your total is $" +
