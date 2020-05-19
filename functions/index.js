@@ -9,10 +9,12 @@ const {
   Carousel,
 } = require("actions-on-google");
 
+Razorpay = require("razorpay");
+
 var instance = new Razorpay({
   key_id: 'rzp_test_nntqJyaRnUQOqk',
   key_secret: '2AQwGxFlCW54CfRq99nSiMOR'
-})
+});
 
 // Import modules for sending emails.
 const nodemailer = require("nodemailer");
