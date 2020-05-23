@@ -3,11 +3,13 @@
 <p align=center><img src="https://github.com/Team-Code-Paradox/StockHub/blob/master/Assets/preview.gif" alt="Preview" height="600" width="320"/></p>
 
 #### <p align=center><b>Watch our product in action in </b><img src="http://icons.iconarchive.com/icons/papirus-team/papirus-apps/256/youtube-icon.png" height="20" width="20" alt="Youtube" /> <a href="https://youtu.be/6TZG1LsH-EA">here</a> </p>
-####
-Added customer support integration to track and respond to customer requests and direct them to human agent on customer's demand. Just say **talk to human** or **transfer to agent** and a customer support agent will be assigned in realtime to resolve customer queries.
-A typical **website integration** has been presented [here](https://team-code-paradox.github.io/hubdroid-web).
+#### 
+A typical **website integration** to demonstrate **Human Plus Bot Hybrid Support** has been presented [here](https://team-code-paradox.github.io/hubdroid-web). Just say **talk to human** or **transfer to agent** and a customer support agent will be assigned in realtime to resolve customer queries. The integration keeps a log of customer queries, responds to requests and direct them to human agent on customer's demand. Customers can even send files as an attachment for better understanding and prompt resolution of queries. 
   
-A full scale featured product is showcased in the video link as stated [above.](https://youtu.be/6TZG1LsH-EA)
+The demonstration of how the prototpe integrates with the **Google Assistant** can be watched [here.](https://vimeo.com/421960384)
+  
+All the features of the prototype along with the integrations is showcased in the video link as stated [above.](https://youtu.be/6TZG1LsH-EA)
+
 ####
 Hey there! I am Store Bot. I will assist you in ordering the products.
 But first, I need to understand your language. Please follow the following steps:
