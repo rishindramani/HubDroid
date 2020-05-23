@@ -5,7 +5,7 @@
 #### <p align=center><b>Watch our product in action in </b><img src="http://icons.iconarchive.com/icons/papirus-team/papirus-apps/256/youtube-icon.png" height="20" width="20" alt="Youtube" /> <a href="https://youtu.be/6TZG1LsH-EA">here</a> </p>
 ####
 Added customer support integration to track and respond to customer requests and direct them to human agent on customer's demand. Just say **talk to human** or **transfer to agent** and a customer support agent will be assigned in realtime to resolve customer queries.
-A typical **website integration** has been presented [here](https://rishindramani.github.io/hubdroid).
+A typical **website integration** has been presented [here](https://team-code-paradox.github.io/hubdroid-web).
   
 A full scale featured product is showcased in the video link as stated [above.](https://youtu.be/6TZG1LsH-EA)
 ####
