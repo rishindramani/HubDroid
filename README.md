@@ -2,7 +2,7 @@
 
 <p align=center><img src="https://github.com/Team-Code-Paradox/StockHub/blob/master/Assets/preview.gif" alt="Preview" height="600" width="320"/></p>
 
-#### <p align=center><b>Watch our product in action in </b><img src="http://icons.iconarchive.com/icons/papirus-team/papirus-apps/256/youtube-icon.png" height="20" width="20" alt="Youtube" /> <a href="https://youtu.be/6TZG1LsH-EA">here</a> </p>
+#### <p align=center><b>Watch our product in action </b><img src="http://icons.iconarchive.com/icons/danleech/simple/256/vimeo-icon.png" height="20" width="20" alt="Vimeo" /> <a href="https://vimeo.com/417173972">here</a> </p>
 #### 
 A typical **website integration** to demonstrate **Human Plus Bot Hybrid Support** has been presented [here](https://team-code-paradox.github.io/hubdroid-web). Just say **talk to human** or **transfer to agent** and a customer support agent will be assigned in realtime to resolve customer queries. The integration keeps a log of customer queries, responds to requests and direct them to human agent on customer's demand. Customers can even send files as an attachment for better understanding and prompt resolution of queries. 
   
@@ -12,7 +12,7 @@ All the features of the prototype along with the integrations is showcased in th
 
 ####
 Hey there! I am Store Bot. I will assist you in ordering the products.
-But first, I need to understand your language. Please follow the following steps:
+But first, I need to understand your language. Please follow the following steps to deploy on google assistant:
 
 #### Deploying Dialogflow Agent:
 
