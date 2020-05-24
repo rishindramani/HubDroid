@@ -6,14 +6,14 @@
 #### 
 A typical **website integration** to demonstrate **Human Plus Bot Hybrid Support** has been presented [here](https://team-code-paradox.github.io/hubdroid-web). Just say **talk to human** or **transfer to agent** and a customer support agent will be assigned in realtime to resolve customer queries. The integration keeps a log of customer queries, responds to requests and direct them to human agent on customer's demand. Customers can even send files as an attachment for better understanding and prompt resolution of queries. 
   
-The demonstration of how the prototpe integrates with the **Google Assistant** can be watched [here.](https://vimeo.com/421960384)
+The demonstration of how the prototpe integrates with the **Google Assistant** enabled devices can be watched [here.](https://vimeo.com/421960384)
   
-All the features of the prototype along with the integrations is showcased in the video link as stated [above.](https://youtu.be/6TZG1LsH-EA)
+All the features of the prototype along with the integrations is showcased in the video link as stated [above.](https://vimeo.com/417173972)
 
 ####
 Hey there! I am Store Bot. I will assist you in ordering the products.
-But first, I need to understand your language. Please follow the following steps to deploy on google assistant:
-
+But first, I need to understand your language. Please follow the following steps:
+## Deployment instructions for running prototype on Google Assistant enabled devices:
 #### Deploying Dialogflow Agent:
 
 1. Locate the **Hub_Droid.zip** file in code repository.
